@@ -98,12 +98,13 @@ class AuthController
           $resultado =  $usuario->guardar();
 
           // Enviar email
-          $email = new Email($usuario->email, $usuario->nombre, $usuario->token);
-          $email->enviarConfirmacion();
+          // $email = new Email($usuario->email, $usuario->nombre, $usuario->token);
+          // $email->enviarConfirmacion();
 
 
           if ($resultado) {
-            header('Location: /mensaje');
+            // header('Location: /mensaje');
+            header(`Location: /confirmar-cuenta?token=$usuario->token`);
           }
         }
       }
