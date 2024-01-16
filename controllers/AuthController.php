@@ -103,8 +103,7 @@ class AuthController
 
 
           if ($resultado) {
-            // header('Location: /mensaje');
-            header(`Location: /confirmar-cuenta?token=$usuario->token`);
+            header('Location: /confirmar-cuenta?token=' . $usuario->token);
           }
         }
       }
